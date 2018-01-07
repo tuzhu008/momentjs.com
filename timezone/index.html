@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="/static/css/style.css" />
 		<link rel="shortcut icon" href="/static/img/moment-timezone-favicon.png" />
 
-		<title>Moment Timezone | Home</title>
+		<title>Moment Timezone | 首 页</title>
 		<script>
 			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 			ga('create', 'UA-10641787-5', 'auto');
@@ -45,11 +45,11 @@
 				</div>
 				<div class="nav-pages">
 					
-						<a href="." class="active">Home</a>
+						<a href="." class="active">首 页</a>
 					
-						<a href="docs/" >Docs</a>
+						<a href="docs/" >文 档</a>
 					
-						<a href="tests/" >Tests</a>
+						<a href="tests/" >测 试</a>
 					
 					<a href="https://github.com/moment/moment-timezone/">GitHub</a>
 				</div>
@@ -68,14 +68,14 @@
 		</div>
 		<div class="hero-title">
 			<h1>Moment Timezone <span>0.5.14-2017c</span></h1>
-			<h2>Parse and display dates in any timezone.</h2>
+			<h2>JavaScript 时区处理类库</h2>
 		</div>
 	</div>
 </header>
 
 <div class="builds">
 	<div class="builds-download">
-		<h3>Download</h3>
+		<h3>下载</h3>
 		<a class="builds-button builds-button-source" href="/downloads/moment-timezone.js">
 			moment-timezone.js
 		</a>
@@ -101,7 +101,7 @@
 		</a>
 	</div>
 	<div class="builds-packages">
-		<h3>Install</h3>
+		<h3>安装</h3>
 		<pre><code>bower install moment-timezone --save <span class="comment"># bower</span>
 npm install moment-timezone --save   <span class="comment"># npm</span>
 yarn add moment-timezone             <span class="comment"># Yarn</span>
@@ -121,7 +121,7 @@ Install-Package Moment.Timezone.js   <span class="comment"># NuGet</span></code>
 		</div>
 	</div>
 
-<h3 id="format-dates-in-any-timezone">Format Dates in Any Timezone</h3>
+<h3 id="-">格式化日期到任意时区</h3>
 <pre><code class="language-js"><span class="keyword">var</span> jun = moment(<span class="string">"2014-06-01T12:00:00Z"</span>);
 <span class="keyword">var</span> dec = moment(<span class="string">"2014-12-01T12:00:00Z"</span>);
 
@@ -136,7 +136,7 @@ dec.tz(<span class="string">'Asia/Tokyo'</span>).format(<span class="string">'ha
 
 jun.tz(<span class="string">'Australia/Sydney'</span>).format(<span class="string">'ha z'</span>);     <span class="comment">// 10pm EST</span>
 dec.tz(<span class="string">'Australia/Sydney'</span>).format(<span class="string">'ha z'</span>);     <span class="comment">// 11pm EST</span></code></pre>
-<h3 id="convert-dates-between-timezones">Convert Dates Between Timezones</h3>
+<h3 id="-">转换时区之间的日期</h3>
 <pre><code class="language-js"><span class="keyword">var</span> newYork    = moment.tz(<span class="string">"2014-06-01 12:00"</span>, <span class="string">"America/New_York"</span>);
 <span class="keyword">var</span> losAngeles = newYork.clone().tz(<span class="string">"America/Los_Angeles"</span>);
 <span class="keyword">var</span> london     = newYork.clone().tz(<span class="string">"Europe/London"</span>);
@@ -150,12 +150,11 @@ london.format();     <span class="comment">// 2014-06-01T17:00:00+01:00</span></
 
 
 
-
 		<footer>
-			<p>Moment.js is freely distributable under the terms of the MIT license.</p>
+			<p>本站翻译自 Moment.js，若有疑问请参考<a href='http://momentjs.cn/'>原站]</a>。</p>
 		</footer>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/jquery/1.8.2/jquery.min.js"></script>
 		<script src="/static/js/global.js"></script>
 		
 			<script src="/static/js/timezone-home.js"></script>

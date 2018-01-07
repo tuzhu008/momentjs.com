@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="/static/css/style.css" />
 		<link rel="shortcut icon" href="/static/img/moment-favicon.png" />
 
-		<title>Moment.js | Home</title>
+		<title>Moment.js | 首 页</title>
 		<script>
 			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 			ga('create', 'UA-10641787-5', 'auto');
@@ -45,13 +45,13 @@
 				</div>
 				<div class="nav-pages">
 					
-						<a href="." class="active">Home</a>
+						<a href="." class="active">首 页</a>
 					
-						<a href="docs/" >Docs</a>
+						<a href="docs/" >文 档</a>
 					
-						<a href="guides/" >Guides</a>
+						<a href="guides/" >教 程</a>
 					
-						<a href="tests/" >Tests</a>
+						<a href="tests/" >测 试</a>
 					
 					<a href="https://github.com/moment/moment/">GitHub</a>
 				</div>
@@ -73,7 +73,7 @@
 		</div>
 		<div class="hero-title">
 			<h1>Moment.js <span>2.20.1</span></h1>
-			<h2>Parse, validate, manipulate, and display dates and times in JavaScript.</h2>
+			<h2>使用JavaScript解析，验证，操作和显示日期和时间</h2>
 		</div>
 	</div>
 </header>
@@ -81,7 +81,7 @@
 
 <div class="builds">
 	<div class="builds-download">
-		<h3>Download</h3>
+		<h3>下载</h3>
 		<a class="builds-button builds-button-source" href="/downloads/moment.js">
 			moment.js
 		</a>
@@ -98,7 +98,7 @@
 		</a>
 	</div>
 	<div class="builds-packages">
-		<h3>Install</h3>
+		<h3>安装</h3>
 		<pre><code>npm install moment --save   <span class="comment"># npm</span>
 yarn add moment             <span class="comment"># Yarn</span>
 Install-Package Moment.js   <span class="comment"># NuGet</span>
@@ -111,19 +111,19 @@ bower install moment --save <span class="comment"># bower (deprecated)</span>
 
 <div class="page-moment-index">
 
-<h3 id="format-dates">Format Dates</h3>
+<h3 id="-">格式化日期</h3>
 <pre><code class="language-js">moment().format(<span class="string">'MMMM Do YYYY, h:mm:ss a'</span>);
 moment().format(<span class="string">'dddd'</span>);
 moment().format(<span class="string">"MMM Do YY"</span>);
 moment().format(<span class="string">'YYYY [escaped] YYYY'</span>);
 moment().format();</code></pre>
-<h3 id="relative-time">Relative Time</h3>
+<h3 id="-">相对时间</h3>
 <pre><code class="language-js">moment(<span class="string">"20111031"</span>, <span class="string">"YYYYMMDD"</span>).fromNow();
 moment(<span class="string">"20120620"</span>, <span class="string">"YYYYMMDD"</span>).fromNow();
 moment().startOf(<span class="string">'day'</span>).fromNow();
 moment().endOf(<span class="string">'day'</span>).fromNow();
 moment().startOf(<span class="string">'hour'</span>).fromNow();</code></pre>
-<h3 id="calendar-time">Calendar Time</h3>
+<h3 id="-">日历时间</h3>
 <pre><code class="language-js">moment().subtract(<span class="number">10</span>, <span class="string">'days'</span>).calendar();
 moment().subtract(<span class="number">6</span>, <span class="string">'days'</span>).calendar();
 moment().subtract(<span class="number">3</span>, <span class="string">'days'</span>).calendar();
@@ -132,7 +132,7 @@ moment().calendar();
 moment().add(<span class="number">1</span>, <span class="string">'days'</span>).calendar();
 moment().add(<span class="number">3</span>, <span class="string">'days'</span>).calendar();
 moment().add(<span class="number">10</span>, <span class="string">'days'</span>).calendar();</code></pre>
-<h3 id="multiple-locale-support">Multiple Locale Support</h3>
+<h3 id="-">多语言支持</h3>
 <pre><code class="language-js">moment.locale();
 moment().format(<span class="string">'LT'</span>);
 moment().format(<span class="string">'LTS'</span>);
@@ -240,7 +240,7 @@ moment().format(<span class="string">'llll'</span>);</code></pre>
 			Central Atlas Tamazight Latin
 		</div>
 	
-		<div class="button " data-locale="zh-cn">
+		<div class="button active" data-locale="zh-cn">
 			Chinese (China)
 		</div>
 	
@@ -296,7 +296,7 @@ moment().format(<span class="string">'llll'</span>);</code></pre>
 			English (United Kingdom)
 		</div>
 	
-		<div class="button active" data-locale="en">
+		<div class="button " data-locale="en">
 			English (United States)
 		</div>
 	
@@ -635,10 +635,10 @@ moment().format(<span class="string">'llll'</span>);</code></pre>
 
 
 		<footer>
-			<p>Moment.js is freely distributable under the terms of the MIT license.</p>
+			<p>本站翻译自 Moment.js，若有疑问请参考<a href='http://momentjs.cn/'>原站]</a>。</p>
 		</footer>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/jquery/1.8.2/jquery.min.js"></script>
 		<script src="/static/js/global.js"></script>
 		
 			<script src="/static/js/core-home.js"></script>
