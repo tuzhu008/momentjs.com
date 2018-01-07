@@ -1,12 +1,11 @@
 ---
-title: Creation Data
+title: 创建数据
 version: 2.11.0
 signature: |
   moment().creationData();
 ---
 
-After a moment object is created, all of the inputs can be accessed with
-`creationData()` method:
+一个 moment 对象被创建之后，所有的输入都可以通过 `creationData()` 方法来访问：
 
 <!-- skip-example -->
 ```javascript

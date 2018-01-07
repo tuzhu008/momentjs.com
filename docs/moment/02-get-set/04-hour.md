@@ -1,5 +1,5 @@
 ---
-title: Hour
+title: 小时
 version: 1.0.0
 signature: |
   moment().hour(Number);
@@ -9,6 +9,6 @@ signature: |
 ---
 
 
-Gets or sets the hour.
+获取和设置小时。
 
-Accepts numbers from 0 to 23. If the range is exceeded, it will bubble up to the day.
+接受 0 到 23 的数字。如果超出范围，它会冒泡到天。

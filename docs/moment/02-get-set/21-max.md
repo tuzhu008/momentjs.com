@@ -1,14 +1,14 @@
 ---
-title: Maximum
+title: 最大值
 version: 2.7.0
 signature: |
   moment.max(Moment[,Moment...]);
   moment.max(Moment[]);
 ---
 
-Returns the maximum (most distant future) of the given moment instances.
+返回给定的 moment 实例中最大（最遥远的未来）的。
 
-For example:
+例如:
 ```javascript
 var a = moment().subtract(1, 'day');
 var b = moment().add(1, 'day');
@@ -20,11 +20,9 @@ var friendsBirthDays = friends.map(function(friend){
 });
 moment.max(friendsBirthDays);  // '11.01.1993'
 ```
+不带参数的该函数将使用当前的时间返回一个 moment 实例。
 
-With no arguments the function returns a moment instance with the current time.
-
-From version **2.10.5**, if an invalid moment is one of the arguments, the result
-is an invalid moment.
+从版本 **2.10.5** 开始，如果其中一个参数是一个无效的 moment，那么结果就是无效的 moment。
 
 ```javascript
 moment.max(moment(), moment.invalid()).isValid() === false

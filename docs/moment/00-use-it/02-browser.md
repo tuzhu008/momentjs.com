@@ -10,4 +10,4 @@ title: Browser
 </script>
 ```
 
-Moment.js is available on [cdnjs.com](https://cdnjs.com/libraries/moment.js) and on [jsDelivr](https://www.jsdelivr.com/package/npm/moment).
+可以在 [cdnjs.com](https://cdnjs.com/libraries/moment.js) 和 [jsDelivr](https://www.jsdelivr.com/package/npm/moment) 上找到 Moment.js。

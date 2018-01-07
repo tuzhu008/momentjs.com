@@ -1,5 +1,5 @@
 ---
-title: Now
+title: 当前时间
 version: 1.0.0
 signature: |
   moment();
@@ -9,14 +9,12 @@ signature: |
 ---
 
 
-To get the current date and time, just call `moment()` with no parameters.
+要获得当前的日期和时间，只需不带参数地调用 `moment()`。
 
 ```javascript
 var now = moment();
 ```
 
-This is essentially the same as calling `moment(new Date())`.
+这与调用 `moment(new Date())` 基本相同。
 
-**Note:** From version **2.14.0**, `moment([])` and `moment({})` also return
-now. They used to default to start-of-today before 2.14.0, but that was
-arbitrary so it was changed.
+**注意:** 从 **2.14.0** 版本开始， `moment([])` 和 `moment({})`  也返回当前时间。在 2.14.0 之前，它们被作用今天的默认值，那很随意的，所以它被改变了。

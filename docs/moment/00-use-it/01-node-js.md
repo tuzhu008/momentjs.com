@@ -12,5 +12,5 @@ var moment = require('moment');
 moment().format();
 ```
 
-**Note:** In **2.4.0**, the globally exported moment object was **deprecated**.
-It will be removed in next major release.
+**Note:** 在 **2.4.0**, 全局导出的力 moment 对象被 **弃用**。
+它将在下一个主要版本中被删除。

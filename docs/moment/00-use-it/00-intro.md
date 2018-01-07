@@ -1,14 +1,12 @@
 ---
-title: Where to use it
+title: 使用方法
 ---
 
 
-Moment was designed to work both in the browser and in Node.js.
+Moment 被设计用于在浏览器和 node.js 中工作。
 
-All code should work in both of these environments, and all unit tests are run in both of these environments.
+所有代码都可以在这两种环境中工作。所有单元测试都在两个环境中运行。
 
-Currently the following browsers are used for the ci system: Chrome on Windows XP, IE 8, 9, and 10 on Windows 7,
-IE 11 on Windows 10, latest Firefox on Linux, and latest Safari on OSX 10.8 and 10.11.
+目前，下列浏览器被用于 ci 系统: Windows XP 上的 Chrome, Windows 7 的 IE 8, 9, 和 10, Windows 10 上的 IE 11, Linux 上的稳定版 Firefox, OSX 10.8 和 10.11 上的稳定版 Safari。
 
-If you want to try the sample codes below, just open your browser's console and enter them.
-
+如果您想尝试下面的示例代码，只需打开浏览器的控制台并输入它们。

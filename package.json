@@ -3,7 +3,7 @@
   "name": "momentjs.com",
   "version": "1.0.0",
   "description": "Website for momentjs.com",
-  "homepage": "https://momentjs.com",
+  "homepage": "https://tuzhu008.github.io/momentjs_cn/",
   "author": "Tim Wood <washwithcare@gmail.com> (http://timwoodcreates.com/)",
   "scripts": {
     "doctest": "markdown-doctest"

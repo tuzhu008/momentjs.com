@@ -1,5 +1,5 @@
 ---
-title: Week Year (ISO)
+title: 周-年(ISO)
 version: 2.1.0
 signature: |
   moment().isoWeekYear(Number);
@@ -7,4 +7,4 @@ signature: |
 ---
 
 
-Gets or sets the [ISO week-year](https://en.wikipedia.org/wiki/ISO_week_date).
+获取和设置 [ISO week-year](https://en.wikipedia.org/wiki/ISO_week_date).

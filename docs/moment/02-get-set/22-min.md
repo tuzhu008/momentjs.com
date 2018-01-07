@@ -1,14 +1,14 @@
 ---
-title: Minimum
+title: 最小值
 version: 2.7.0
 signature: |
   moment.min(Moment[,Moment...]);
   moment.min(Moment[]);
 ---
 
-Returns the minimum (most distant past) of the given moment instances.
+返回给定的 moment 实例中最小（最遥远的过去）的。
 
-For example:
+例如
 ```javascript
 var a = moment().subtract(1, 'day');
 var b = moment().add(1, 'day');
@@ -16,10 +16,9 @@ moment.min(a, b);  // a
 moment.min([a, b]); // a
 ```
 
-With no arguments the function returns a moment instance with the current time.
+不带参数的该函数将使用当前的时间返回一个 moment 实例。
 
-From version **2.10.5**, if an invalid moment is one of the arguments, the result
-is an invalid moment.
+从版本 **2.10.5** 开始，如果其中一个参数是一个无效的 moment，那么结果就是无效的 moment。
 
 ```javascript
 moment.min(moment(), moment.invalid()).isValid() === false

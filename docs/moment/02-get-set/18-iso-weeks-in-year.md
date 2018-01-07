@@ -1,9 +1,9 @@
 ---
-title: Weeks In Year (ISO)
+title: 周数(ISO)
 version: 2.6.0
 signature: |
   moment().isoWeeksInYear();
 ---
 
 
-Gets the number of weeks in the current moment's year, according to [ISO weeks](https://en.wikipedia.org/wiki/ISO_week_date).
+根据当前 moment 的地区获取当前年份的周数，根据 [ISO weeks](https://en.wikipedia.org/wiki/ISO_week_date).

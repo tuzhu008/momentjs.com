@@ -1,5 +1,5 @@
 ---
-title: String + Format
+title: 字符串 + 格式
 version: 1.0.0
 signature: |
   moment(String, String);
@@ -8,31 +8,30 @@ signature: |
   moment(String, String, String, Boolean);
 ---
 
-
-If you know the format of an input string, you can use that to parse a moment.
+如果您知道输入字符串的格式，您可以使用它来解析 moment。
 
 ```javascript
 moment("12-25-1995", "MM-DD-YYYY");
 ```
 
-The parser ignores non-alphanumeric characters, so both of the following will return the same thing.
+解析器忽略了非字母数字字符，因此下面两个都将返回相同的内容。
 
 ```javascript
 moment("12-25-1995", "MM-DD-YYYY");
 moment("12/25/1995", "MM-DD-YYYY");
 ```
 
-The parsing tokens are similar to the formatting tokens used in `moment#format`.
+解析符号类似于在 `moment#format` 中使用的格式化符号。
 
 #### Year, month, and day tokens
 
-| Input       | Example          | Description |
+| Input       |     示例          | 描述     |
 | ----------- | ---------------- | ----------- |
-| `YYYY`      | `2014`           | 4 or 2 digit year |
-| `YY`        | `14`             | 2 digit year |
+| `YYYY`      | `2014`           | 4 or 2 digit year 年|
+| `YY`        | `14`             | 2 digit year 年|
 | `Y`         | `-25`            | Year with any number of digits and sign |
-| `Q`         | `1..4`           | Quarter of year. Sets month to first month in quarter. |
-| `M MM`      | `1..12`          | Month number |
+| `Q`         | `1..4`           | Quarter of year. Sets month to first month in quarter. 季度|
+| `M MM`      | `1..12`          | Month number 月|
 | `MMM MMMM`  | `Jan..December`  | Month name in locale set by `moment.locale()` |
 | `D DD`      | `1..31`          | Day of month |
 | `Do`        | `1st..31st`      | Day of month with ordinal |
@@ -40,14 +39,13 @@ The parsing tokens are similar to the formatting tokens used in `moment#format`.
 | `X`         | `1410715640.579` | Unix timestamp |
 | `x`         | `1410715640579`  | Unix ms timestamp |
 
-`YYYY` from version **2.10.5** supports 2 digit years, and converts them to a year
-near 2000 (same as `YY`).
+从 **2.10.5** 开始，`YYYY` 支持 2尾数的年份，并将其转为接近 2000 的年份（与 `YY` 相同）
 
-`Y` was added in **2.11.1**. It will match any number, signed or unsigned. It is useful for years that are not 4 digits or are before the common era. It can be used for any year.
+`Y` 被添加进 **2.11.1**。它将匹配任何数字，有符号的或无符号的。它对于那些不是 4 位数或者是在公元前的年份来说是有用的。它可以用在任何一年。
 
 #### Week year, week, and weekday tokens
 
-For these, the lowercase tokens use the locale aware week start days, and the uppercase tokens use the [ISO week date](https://en.wikipedia.org/wiki/ISO_week_date) start days.
+对于这些，小写标记使用区域设置感知周开始日期，而大写标记使用 [ISO week date](https://en.wikipedia.org/wiki/ISO_week_date) 开始日期。
 
 | Input       | Example          | Description |
 | ----------- | ---------------- | ----------- |
@@ -79,30 +77,33 @@ any number of digits, but will only consider the top 3 (milliseconds). Use if
 you have the time printed with many fractional digits and want to consume the
 input.
 
+从版本 **2.10.5** ：部分的秒数符号长度 4 到 9 可以解析任意数量的数字，但只会考虑前 3（毫秒）。如果您有要打印的带着许多小数位的时间，并且想要消耗（consume）输入，请使用。
+
+请注意，提供的 `S` 字符的数量仅在严格模式下解析时才有意义。在标准模式下，`S`, `SS`, `SSS`, `SSSS` 全部相同，并解释为秒的小数部分。 例如 `.12` 总是 120 毫秒，通过 `SS` 不会导致它被解释为 12 毫秒。
+
+区域识别日期和时间格式也可以使用LT LTS L LL LLL LLLL。 除了已添加的“LTS”以外，它们被添加到版本** 2.2.1 **中
 Note that the number of `S` characters provided is only relevant when parsing in strict mode.
 In standard mode, `S`, `SS`, `SSS`, `SSSS` are all equivalent, and interpreted as fractions of a second.
 For example, `.12` is always 120 milliseconds, passing `SS` will not cause it to be interpreted as 12 milliseconds.
 
-Locale aware date and time formats are also available using `LT LTS L LL LLL
-LLLL`. They were added in version **2.2.1**, except `LTS` which was added
-**2.8.4**.
+使用 `LT LTS L LL LLL LLLL`， 语言环境感知日期和时间格式也是可用的，它们被添加到版本 **2.2.1** 中，除了在 **2.8.4** 被添加的 `LTS` 之外。
 
-`Z ZZ` were added in version **1.2.0**.
+`Z ZZ` 被添加到版本 **1.2.0**.
 
-`S SS SSS` were added in version **1.6.0**.
+`S SS SSS` 被添加到版本 **1.6.0**.
 
-`X` was added in version **2.0.0**.
+`X` 被添加到版本 **2.0.0**.
 
-`k kk` was added in version **2.18.0**
+`k kk` 被添加到版本 **2.18.0**
 
-Unless you specify a time zone offset, parsing a string will create a date in the current time zone.
+除非您指定一个时区偏移，否则解析一个字符串将在当前时区创建一个日期。
 
 ```js
-moment("2010-10-20 4:30",       "YYYY-MM-DD HH:mm");   // parsed as 4:30 local time
-moment("2010-10-20 4:30 +0000", "YYYY-MM-DD HH:mm Z"); // parsed as 4:30 UTC
+moment("2010-10-20 4:30",       "YYYY-MM-DD HH:mm");   // 被解析为 4:30 local time
+moment("2010-10-20 4:30 +0000", "YYYY-MM-DD HH:mm Z"); // 被解析为 4:30 UTC
 ```
 
-If the moment that results from the parsed input does not exist, `moment#isValid` will return false.
+如果解析输入的结果 moment 不存在，那么 `moment#isValid` 将返回 false。
 
 ```js
 moment("2010 13",           "YYYY MM").isValid();     // false (not a real month)
@@ -111,28 +112,28 @@ moment("2010 2 29",         "YYYY MM DD").isValid();  // false (not a leap year)
 moment("2010 notamonth 29", "YYYY MMM DD").isValid(); // false (not a real month name)
 ```
 
-As of version **2.0.0**, a locale key can be passed as the third parameter to `moment()` and `moment.utc()`.
+在 **2.0.0** 版本中，一个语言环境的键可以作为第三个参数传递给 `moment()` 和 `moment.utc()`。
 
 ```js
 moment('2012 juillet', 'YYYY MMM', 'fr');
 moment('2012 July',    'YYYY MMM', 'en');
 ```
 
-Moment's parser is very forgiving, and this can lead to undesired/unexpected behavior.
+Moment 的解析器是非常宽容的，这可能导致不需要的/不可预期的行为。
 
-For example, the following behavior can be observed:
+例如，以下行为可以被观察到:
 
 ```javascript
 moment('2016 is a date', 'YYYY-MM-DD').isValid() //true, 2016 was matched
 ```
 
-Previous to **2.13.0** the parser exhibited the following behavior. This has been corrected.
+在 **2.13.0**  之前，解析器显示了以下行为。这已经被修正。
 
 ```javascript
 moment('I am spartacus', 'h:hh A').isValid();     //true - the 'am' matches the 'A' flag.
 ```
 
-As of version **2.3.0**, you may specify a boolean for the last argument to make Moment use strict parsing. Strict parsing requires that the format and input match exactly, *including delimeters*.
+在 **2.3.0** 版本中，您可以为最后一个参数指定一个布尔值，以便使用严格的解析。严格的解析要求格式和输入完全匹配，*包括分隔符*。
 
 ```javascript
 moment('It is 2012-05-25', 'YYYY-MM-DD').isValid();       // true
@@ -141,17 +142,17 @@ moment('2012-05-25',       'YYYY-MM-DD', true).isValid(); // true
 moment('2012.05.25',       'YYYY-MM-DD', true).isValid(); // false
 ```
 
-You can use both locale and strictness.
+您可以使用语言环境和严格性。
 
 ```javascript
 moment('2012-10-14', 'YYYY-MM-DD', 'fr', true);
 ```
 
-Strict parsing is frequently the best parsing option. For more information about choosing strict vs forgiving parsing, see the <a href="/guides/#/parsing/">parsing guide.</a>
+严格的解析通常是最好的解析选项。要获得更多关于选择严格的 vs 宽容解析的信息，请参阅<a href="/guides/#/parsing/">解析指南</a>。
 
-#### Parsing two digit years
+#### 解析两位数的年份
 
-By default, two digit years above 68 are assumed to be in the 1900's and years 68 or below are assumed to be in the 2000's. This can be changed by replacing the `moment.parseTwoDigitYear` method. The only argument of this method is a string containing the two years input by the user, and should return the year as an integer.
+默认情况下，假设 68 以上的两位数字年份是在 1900 的，而 68 或以下的假设是在 2000 年。 这可以通过替换 `moment.parseTwoDigitYear` 方法来改变。 这个方法唯一的参数是一个包含用户输入两位数年份的字符串，并且应该以整数形式返回年份。
 
 ```javascript
 moment.parseTwoDigitYear = function(yearString) {
@@ -159,9 +160,9 @@ moment.parseTwoDigitYear = function(yearString) {
 }
 ```
 
-#### Parsing glued hour and minutes
+#### 解析粘合的小时和分钟
 
-From version **2.11.0** parsing `hmm`, `Hmm`, `hmmss` and `Hmmss` is supported:
+从 **2.11.0** 开始，支持解析 `hmm`, `Hmm`, `hmmss` 和 `Hmmss`:
 
 ```javascript
 moment("123", "hmm").format("HH:mm") === "01:23"

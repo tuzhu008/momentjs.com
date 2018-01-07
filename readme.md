@@ -1,12 +1,12 @@
-## Installing
+## 安装
 
 ```
 ./compile.sh
 ```
 
-## Running locally
+## 本地运行
 
 ```
 grunt server
 ```
-Note: the command line will show the web server running over `http://0.0.0.0:6060`. If this URL doesn't work, navigate to `http://localhost:6060`.
+注意: 该命令行将显示运行在 `http://0.0.0.0:6060` 的服务器。如果这个 URL 不起作用，请导航到  `http://localhost:6060`。

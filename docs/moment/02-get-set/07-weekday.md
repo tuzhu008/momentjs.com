@@ -1,18 +1,18 @@
 ---
-title: Day of Week (Locale Aware)
+title: 星期(区域标准)
 version: 2.1.0
 signature: |
   moment().weekday(Number);
   moment().weekday(); // Number
 ---
 
+根据区域获取或设置星期几。
 
-Gets or sets the day of the week according to the locale.
+如果区域设置将 Monday 指定为一周中的第一天，则 `moment().weekday(0)` 将为 Monday。
+如果星期天是一周的第一天，那么“星期一（0）”将是星期天。
 
-If the locale assigns Monday as the first day of the week, `moment().weekday(0)` will be Monday.
-If Sunday is the first day of the week, `moment().weekday(0)` will be Sunday.
+与 `moment#day` 一样，如果超出范围，则会泡到其他星期。
 
-As with `moment#day`, if the range is exceeded, it will bubble up to other weeks.
 
 ```javascript
 // when Monday is the first day of the week

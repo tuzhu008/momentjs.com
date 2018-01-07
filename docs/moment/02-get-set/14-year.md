@@ -1,5 +1,5 @@
 ---
-title: Year
+title: 年
 version: 1.0.0
 signature: |
   moment().year(Number);
@@ -9,8 +9,8 @@ signature: |
 ---
 
 
-Gets or sets the year.
+获取或设置年份。
 
-Accepts numbers from -270,000 to 270,000.
+接受从 -270,000 到 270,000 的数字。
 
-**2.16.0** deprecated using ``moment().years()``. Use ``moment().year()`` instead.
+**2.16.0** 弃用 ``moment().years()``。使用 ``moment().year()`` 代替。

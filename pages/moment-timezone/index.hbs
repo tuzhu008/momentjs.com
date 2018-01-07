@@ -1,5 +1,5 @@
 ---
-title   : Home
+title   : 首 页
 layout  : moment-timezone-base.hbs
 order   : 0
 scripts :
@@ -13,14 +13,14 @@ scripts :
 		</div>
 		<div class="hero-title">
 			<h1>Moment Timezone <span>{{ size.moment_timezone_version }}-{{size.moment_timezone_data_version}}</span></h1>
-			<h2>Parse and display dates in any timezone.</h2>
+			<h2>JavaScript 时区处理类库</h2>
 		</div>
 	</div>
 </header>
 
 <div class="builds">
 	<div class="builds-download">
-		<h3>Download</h3>
+		<h3>下载</h3>
 		<a class="builds-button builds-button-source" href="/downloads/moment-timezone.js">
 			moment-timezone.js
 		</a>
@@ -46,7 +46,7 @@ scripts :
 		</a>
 	</div>
 	<div class="builds-packages">
-		<h3>Install</h3>
+		<h3>安装</h3>
 		<pre><code>bower install moment-timezone --save <span class="comment"># bower</span>
 npm install moment-timezone --save   <span class="comment"># npm</span>
 yarn add moment-timezone             <span class="comment"># Yarn</span>
@@ -67,7 +67,7 @@ Install-Package Moment.Timezone.js   <span class="comment"># NuGet</span></code>
 	</div>
 
 {{#markdown}}
-### Format Dates in Any Timezone
+### 格式化日期到任意时区
 
 ```js
 var jun = moment("2014-06-01T12:00:00Z");
@@ -86,7 +86,7 @@ jun.tz('Australia/Sydney').format('ha z');     // 10pm EST
 dec.tz('Australia/Sydney').format('ha z');     // 11pm EST
 ```
 
-### Convert Dates Between Timezones
+### 转换时区之间的日期
 
 ```js
 var newYork    = moment.tz("2014-06-01 12:00", "America/New_York");
@@ -101,4 +101,3 @@ london.format();     // 2014-06-01T17:00:00+01:00
 {{/markdown}}
 
 </div>
-

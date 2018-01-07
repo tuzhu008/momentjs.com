@@ -1,5 +1,5 @@
 ---
-title: Millisecond
+title: 毫秒
 version: 1.3.0
 signature: |
   moment().millisecond(Number);
@@ -9,6 +9,6 @@ signature: |
 ---
 
 
-Gets or sets the milliseconds.
+获取或设置毫秒。
 
-Accepts numbers from 0 to 999. If the range is exceeded, it will bubble up to the seconds.
+接受 0 到 999 的数字。如果超出范围，它会冒泡到秒。

@@ -1,41 +1,42 @@
 ---
-title: Validation
+title: 合法性校验
 version: 1.7.0
 signature: |
   moment().isValid();
 ---
 
 
-Moment applies stricter initialization rules than the `Date` constructor.
+Moment 应用比 `Date` 构造函数更严格的初始化规则。
 
 ```js
 new Date(2013, 25, 14).toString(); // "Sat Feb 14 2015 00:00:00 GMT-0500 (EST)"
 moment([2015, 25, 35]).format();   // 'Invalid date'
 ```
 
-You can check whether the Moment considers the date invalid using `moment#isValid`. You can check the metrics used by `#isValid` using `moment#parsingFlags`, which returns an object.
+您可以使用 `moment#isValid` 来检查当前的日期是否为有效日期。您可以使用 `moment#parsingFlags` 检查 `#isValid` 使用的度量标准，它返回一个对象。
 
-The following parsing flags result in an invalid date:
+以下解析标记导致无效的日期：
 
- * `overflow`: An overflow of a date field, such as a 13th month, a 32nd day of the month (or a 29th of February on non-leap years), a 367th day of the year, etc. `overflow` contains the index of the invalid unit to match `#invalidAt` (see below); `-1` means no overflow.
- * `invalidMonth`: An invalid month name, such as ```moment('Marbruary', 'MMMM');```. Contains the invalid month string itself, or else null.
- * `empty`: An input string that contains nothing parsable, such as `moment('this is nonsense');`. Boolean.
- * `nullInput`: A `null` input, like `moment(null);`. Boolean.
- * `invalidFormat`: An empty list of formats, such as `moment('2013-05-25', [])`. Boolean.
- * `userInvalidated`: A date created explicitly as invalid, such as `moment.invalid()`. Boolean.
+ * `overflow`: 一个日期字段的溢出，例如一个月的第十三个月，第三十二天（或非闰年的二月二十九日），一年的第 367 天等等， `overflow` 包含无效单元单位的索引，用来匹配 `#invalidAt`（见下文）; `-1` 表示没有溢出。
+ * `invalidMonth`: 无效的月份名称，例如 ```moment('Marbruary', 'MMMM');```。包含无效的月份字符串本身，否则为空。
+ * `empty`: 一个输入字符串，它不包含任何可解析的内容，比如 `moment('this is nonsense');`，则为 `true` 。Boolean。
+ * `nullInput`: 是否为 `null` 输入，就像 `moment(null);`。Boolean.
+ * `invalidFormat`: 格式列表是否为空，如 `moment('2013-05-25', [])`. Boolean.
+ * `userInvalidated`: 一个明确地创建为无效的日期, 如 `moment.invalid()`. Boolean.
 
- In addition to the above, As of **2.13.0** the meridiem and parsedDateParts flags work together to determine date validity.
- * `meridiem`: Indicates what meridiem (AM/PM) was parsed, if any. String.
- * `parsedDateParts`: Returns an array of date parts parsed in descending order - i.e. parsedDateParts[0] === year. If no parts are present, but meridiem has value, date is invalid. Array.
+ 除上述之外，在 **2.13.0** 中，`meridiem` 和 `parsedDateParts` 标志一起工作，以确定日期的有效性。
 
-Additionally, if the Moment is parsed in strict mode, these flags must be empty for the Moment to be valid:
+ * `meridiem`: 指示 meridiem (AM/PM) 是否被解析，如果有的话。String。
+ * `parsedDateParts`: 返回一个按照降序排列的被解析的日期部分的数组——即 parsedDateParts[0] === year。如果没有任何部分被提供，但 meridiem 有值，那么日期是无效的。Array。
 
- * `unusedTokens`: array of format substrings not found in the input string
- * `unusedInput`: array of input substrings not matched to the format string
+此外，如果 Moment 在严格模式下被解析，那么这些标记必须是空的，以便 Moment 有效：
 
-**Note:** Moment's concept of validity became more strict and consistent between **2.2** and **2.3**.
+ * `unusedTokens`: 表示在输入字符串中找不到格式子串的数组
+ * `unusedInput`: 输入子串的数组与格式字符串不匹配
 
-Additionally, you can use `moment#invalidAt` to determine which date unit overflowed.
+**注意:** Moment 的有效性概念在 **2.2** 和 **2.3** 之间变得更为严格和一致。
+
+此外，你还可以使用 `moment#invalidAt` 来确定日期的哪个单元溢出了。
 
 ```javascript
 var m = moment("2011-10-10T10:20:90");
@@ -43,7 +44,7 @@ m.isValid(); // false
 m.invalidAt(); // 5 for seconds
 ```
 
-The return value has the following meaning:
+返回值具有以下含义：
 
 <ol>
   <li>years</li>
@@ -55,15 +56,14 @@ The return value has the following meaning:
   <li>milliseconds</li>
 </ol>
 
-**Note:** In case of multiple wrong units the first one is returned (because
-days validity may depend on month, for example).
+**注意:** 如果出现多个错误单元，则返回第一个错误单元（例如，日期有效性可能取决于月份）。
 
-Invalid Moments
+无效的 Moments
 ===============
 
-If a moment is invalid, it behaves like a NaN in floating point operations.
+如果 moment 是无效的，则在浮点操作中表现得像一个 NaN。
 
-All of the following produce invalid moments:
+以下所有情况都会产生无效的 moment：
 * `invalid.add(unit, value)`
 * `another.add(invalid)`
 * `invalid.clone()`
@@ -77,7 +77,7 @@ All of the following produce invalid moments:
 * `invalid.startOf(unit)`
 * `invalid.subtract(unit, value)`
 
-The following produce a localized version of `'InvalidDate'`:
+以下会产生 `'InvalidDate'` 的本地化版本:
 * `invalid.format(anyFmt)` results in `'Invalid Date'` in the current locale
 * `invalid.from(another)`
 * `another.from(invalid)`
@@ -88,7 +88,7 @@ The following produce a localized version of `'InvalidDate'`:
 * `invalid.toISOString()`
 * `invalid.toString()`
 
-The following return `false`:
+以下返回 `false`:
 * `invalid.isAfter(another)`
 * `another.isAfter(invalid)`
 * `invalid.isBefore(another)`
@@ -101,7 +101,7 @@ The following return `false`:
 * `invalid.isSameOrBefore(another)`
 * `another.isSameOrBefore(invalid)`
 
-And these return `null` or `NaN` with some structure:
+这些将返回带有一些结构的 `null` 或 `NaN`：
 * `invalid.get(unit)` returns null, as all other named getters
 * `invalid.toArray() === [NaN, NaN, NaN, NaN, NaN, NaN]`
 * `invalid.toObject()` has all values set to `NaN`

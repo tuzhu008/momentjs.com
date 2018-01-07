@@ -1,5 +1,5 @@
 ---
-title: Week of Year (ISO)
+title: 第几周(ISO)
 version: 2.0.0
 signature: |
   moment().isoWeek(Number);
@@ -9,6 +9,6 @@ signature: |
 ---
 
 
-Gets or sets the [ISO week of the year](https://en.wikipedia.org/wiki/ISO_week_date).
+获取和设置 [ISO week of the year](https://en.wikipedia.org/wiki/ISO_week_date).
 
-When setting the week of the year, the day of the week is retained.
+设置一年中的周，星期几保留。

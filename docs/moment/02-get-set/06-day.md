@@ -1,5 +1,5 @@
 ---
-title: Day of Week
+title: 星期
 version: 1.3.0
 signature: |
   moment().day(Number|String);
@@ -8,12 +8,11 @@ signature: |
   moment().days(); // Number
 ---
 
+获取或设置星期几。
 
-Gets or sets the day of the week.
+此方法可用于设置星期几，星期天为 0，星期六为 6。
 
-This method can be used to set the day of the week, with Sunday as 0 and Saturday as 6.
-
-If the range is exceeded, it will bubble up to other weeks.
+如果超出范围，则会冒泡到其他星期。
 
 ```javascript
 moment().day(-7); // last Sunday (0 - 7)
@@ -22,9 +21,9 @@ moment().day(10); // next Wednesday (3 + 7)
 moment().day(24); // 3 Wednesdays from now (3 + 7 + 7 + 7)
 ```
 
-**Note:** `Moment#date` is for the date of the month, and `Moment#day` is for the day of the week.
+**注意:** `Moment#date` 是每月的日期，而 `Moment#day` 是一周中一天。
 
-As of **2.1.0**, a day name is also supported. This is parsed in the moment's current locale.
+在 **2.1.0** 种，也支持星期名称。这是在 moment 当前的语言环境中被解析。
 
 ```javascript
 moment().day("Sunday");

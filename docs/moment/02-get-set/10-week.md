@@ -1,5 +1,5 @@
 ---
-title: Week of Year
+title: 第几周
 version: 2.0.0
 signature: |
   moment().week(Number);
@@ -8,17 +8,16 @@ signature: |
   moment().weeks(); // Number
 ---
 
+获取或设置一年的一周。
 
-Gets or sets the week of the year.
+由于不同的语言环境定义了不同的年份编号，Moment.js 添加了 `moment#week` 来获取/设置本地化的一年的一周。
 
-Because different locales define week of year numbering differently, Moment.js added `moment#week` to get/set the localized week of the year.
+一年中的一周会根据一周中的第一天（星期日，星期一等）以及哪一周是一年中的第一周而有所不同。
 
-The week of the year varies depending on which day is the first day of the week (Sunday, Monday, etc), and which week is the first week of the year.
+例如，在美国，周日是一周中的第一天。 1月1日的一周是今年的第一周。
 
-For example, in the United States, Sunday is the first day of the week. The week with January 1st in it is the first week of the year.
+在法国，星期一是一周中的第一天，而1月4日是本年的第一周。
 
-In France, Monday is the first day of the week, and the week with January 4th is the first week of the year.
+`moment#week` 的输出将取决于 moment 的 [locale](#/i18n)。
 
-The output of `moment#week` will depend on the [locale](#/i18n) for that moment.
-
-When setting the week of the year, the day of the week is retained.
+设置一年中的周时，星期几保留。

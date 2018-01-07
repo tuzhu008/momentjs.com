@@ -1,5 +1,5 @@
 ---
-title: Special Formats
+title: 字符串特殊格式
 version: 2.7.0
 signature: |
   moment(String, moment.CUSTOM_FORMAT, [String], [Boolean]);
@@ -7,19 +7,19 @@ signature: |
   moment(String, [..., moment.ISO_8601, ...], [String], [Boolean]);
 ---
 
-[ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) is a standard for time and duration display. Moment already supports parsing iso-8601 strings, but this can be specified explicitly in the format/list of formats when constructing a moment.
+[ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) 是显示时间和持续时间的标准。 Moment 已经支持解析 iso-8601 字符串，但是在构造 moment 时，可以用 格式/格式列表 明确指定。
 
-To specify iso-8601 parsing use `moment.ISO_8601` constant. 
+要指定 iso-8601 解析，请使用 `moment.ISO_8601` 常数。
 
 ```javascript
 moment("2010-01-01T05:06:07", moment.ISO_8601);
 moment("2010-01-01T05:06:07", ["YYYY", moment.ISO_8601]);
 ```
 
-As of version **2.20.0**, the following HTML5 formats are available:
+从 **2.20.0** 开始，下面的 HTML5 格式是可用的:
 
-| Constant                                    | Format                    | Example                 | Input Type     |
-| -------------                               | -------------             | -------------           | -------------  |
+| 常数                 | 格式                    | 示例                 | 输入框类型     |
+| -------------      | -------------             | -------------           | -------------  |
 | `moment.HTML5_FMT.DATETIME_LOCAL`           | `YYYY-MM-DDTHH:mm`        | 2017-12-14T16:34        |`<input type="datetime-local" />` |
 | `moment.HTML5_FMT.DATETIME_LOCAL_SECONDS`   | `YYYY-MM-DDTHH:mm:ss`     | 2017-12-14T16:34:10     |`<input type="datetime-local" step="1" />` |
 | `moment.HTML5_FMT.DATETIME_LOCAL_MS`        | `YYYY-MM-DDTHH:mm:ss.SSS` | 2017-12-14T16:34:10.234 |`<input type="datetime-local" step="0.001" />` |

@@ -1,5 +1,5 @@
 ---
-title: Minute
+title: 分钟
 version: 1.0.0
 signature: |
   moment().minute(Number);
@@ -9,6 +9,6 @@ signature: |
 ---
 
 
-Gets or sets the minutes.
+获取和设置分钟。
 
-Accepts numbers from 0 to 59. If the range is exceeded, it will bubble up to the hour.
+接受 0 到 59 的数字。如果超出范围，它会冒泡到小时。

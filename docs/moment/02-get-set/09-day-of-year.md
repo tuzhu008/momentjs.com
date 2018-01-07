@@ -1,5 +1,5 @@
 ---
-title: Day of Year
+title: 天
 version: 2.0.0
 signature: |
   moment().dayOfYear(Number);
@@ -7,6 +7,6 @@ signature: |
 ---
 
 
-Gets or sets the day of the year.
+获取或设置一年中的某一天。
 
-Accepts numbers from 1 to 366. If the range is exceeded, it will bubble up to the years.
+接受 1 到 366 之间的数字。如果超出范围，则会冒泡至其他年。

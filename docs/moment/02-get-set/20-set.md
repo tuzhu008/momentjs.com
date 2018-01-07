@@ -1,5 +1,5 @@
 ---
-title: Set
+title: 赋值
 version: 2.2.1
 signature: |
   moment().set(String, Int);
@@ -7,7 +7,7 @@ signature: |
 ---
 
 
-Generic setter, accepting unit as first argument, and value as second:
+通用 setter，接受单位作为第一个参数，值为第二个参数:
 
 ```javascript
 moment().set('year', 2013);
@@ -21,8 +21,9 @@ moment().set('millisecond', 123);
 moment().set({'year': 2013, 'month': 3});
 ```
 
-Units are case insensitive, and support plural and short forms: year (years,
+单位不区分大小写，支持复数和短格式：year (years,
 y), month (months, M), date (dates, D), hour (hours, h), minute (minutes, m),
-second (seconds, s), millisecond (milliseconds, ms).
+second (seconds, s), millisecond (milliseconds, ms)。
 
-Object parsing was added in **2.9.0**
+
+对象解析在 **2.9.0** 种被添加。

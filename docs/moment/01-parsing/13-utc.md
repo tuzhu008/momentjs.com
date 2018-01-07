@@ -15,28 +15,27 @@ signature: |
   moment.utc(Date);
 ---
 
+默认情况下，moment 以本地事件进行解析和显示。
 
-By default, moment parses and displays in local time.
+如果你想以 UTC 解析和显示 moment，你可以使用 `moment.utc()` 来代替 `moment()`。
 
-If you want to parse or display a moment in UTC, you can use `moment.utc()` instead of `moment()`.
+这就给我们带来了 Moment.js UTC 模式的一个有趣的特性。
 
-This brings us to an interesting feature of Moment.js. UTC mode.
-
-While in UTC mode, all display methods will display in UTC time instead of local time.
+在 UTC 模式下，所有显示方法将以 UTC 时间显示，而不是本地时间。
 
 ```javascript
 moment().format();     // 2013-02-04T10:35:24-08:00
 moment.utc().format(); // 2013-02-04T18:35:24+00:00
 ```
 
-Additionally, while in UTC mode, all getters and setters will internally use the `Date#getUTC*` and `Date#setUTC*` methods instead of the `Date#get*` and `Date#set*` methods.
+另外，在 UTC 模式中，所有 getter 和 setter 将在内部使用 `Date#getUTC*` 和 `Date#setUTC*` 方法，而不是日期 `Date#get*` 和 `Date#set*` 方法。
 
 ```javascript
 moment.utc().seconds(30).valueOf() === new Date().setUTCSeconds(30);
 moment.utc().seconds()   === new Date().getUTCSeconds();
 ```
 
-It is important to note that though the displays differ above, they are both the same moment in time.
+值得注意的是，尽管显示器上的显示不同，但它们都是同一时刻。
 
 ```javascript
 var a = moment();
@@ -47,9 +46,9 @@ a.valueOf(); // 1360002924000
 b.valueOf(); // 1360002924000
 ```
 
-Any moment created with `moment.utc()` will be in UTC mode, and any moment created with `moment()` will not.
+任何使用 `moment.utc()` 创建的 moment 都将处在 UTC 模式中，而使用 `moment()` 创建的则不是。
 
-To switch from UTC to local time, you can use [moment#utc](#/manipulating/utc/) or [moment#local](#/manipulating/local/).
+要切换 UTC 与 本地时间，你可以使用 [moment#utc](#/manipulating/utc/) 或 [moment#local](#/manipulating/local/)。
 
 ```javascript
 var a = moment.utc([2011, 0, 1, 8]);

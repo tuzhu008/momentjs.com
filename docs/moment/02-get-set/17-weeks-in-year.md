@@ -1,9 +1,9 @@
 ---
-title: Weeks In Year
+title: 周数
 version: 2.6.0
 signature: |
   moment().weeksInYear();
 ---
 
 
-Gets the number of weeks according to locale in the current moment's year.
+根据当前 moment 的地区获取当前年份的周数。
