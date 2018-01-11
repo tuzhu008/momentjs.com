@@ -37,13 +37,13 @@
 		cursor: pointer;
 
 		&:hover {
-			box-shadow: 1px 0 5px rgba(0, 0, 0, .2);
+			box-shadow: 1px 0 5px rgba(100, 178, 167, .2);
 		}
 
 		&.active {
-			background: #333;
-			color: #ccc;
-			border-color: #000;
+			background: #64B2A7;
+			color: #fff;
+			border-color: #fff;
 		}
 	}
 }
